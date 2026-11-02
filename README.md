@@ -38,18 +38,5 @@ Theme Header, e substitui a página inicial. Só usa a biblioteca padrão.
 
 Para desfazer: esvazie o Theme Header e edite a página `index` em **Admin → Pages**.
 
-## Deploy no Hugging Face Spaces
-
-`deploy-huggingface/` tem o que vai no Space Docker do CTFd
-(renomeie `README-space.md` para `README.md` dentro do Space):
-
-- Imagem `ctfd/ctfd:3.8.9` rodando com UID 1000 e `REVERSE_PROXY=true`.
-- Monte um Storage Bucket em `/data`. O SQLite roda no disco local e um
-  snapshot consistente é copiado para `/data/ctfd.db` a cada 30 s e ao
-  desligar; na partida ele é restaurado. Uploads vão direto para `/data/uploads`.
-- Defina o secret `SECRET_KEY` no Space.
-- Jogadores devem usar a URL direta `https://<usuario>-<space>.hf.space`
-  (dentro do iframe do huggingface.co o login não funciona por causa dos cookies).
-
 As marcas Red Hat e Descomplica pertencem aos seus donos; os logos estão aqui
 apenas para o evento.
